@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Find My Fonts</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<style>
+    {{css}}
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>GoFindMyFonts</h1>
+        <h2>Find and Preview Local Fonts</h2>
+        <button onclick="toggleTheme()">Toggle Dark/Light Theme</button>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <form id="previewForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fontDir">Font Directory Path:</label>
+                        <input type="text" id="fontDir" name="fontDir" placeholder="Enter full path or directory to search" required>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <button type="submit">Search and Preview</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fontSize">Font Size:</label>
+                    <select id="fontSize" name="fontSize">
+                        <option value="12">12px</option>
+                        <option value="14">14px</option>
+                        <option value="16">16px</option>
+                        <option value="18">18px</option>
+                        <option value="20">20px</option>
+                        <option value="24" selected>24px</option>
+                        <option value="28">28px</option>
+                        <option value="32">32px</option>
+                        <option value="36">36px</option>
+                        <option value="42">42px</option>
+                        <option value="48">48px</option>
+                        <option value="56">56px</option>
+                        <option value="64">64px</option>
+                        <option value="72">72px</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="columns">Number of Columns:</label>
+                    <select id="columns" name="columns">
+                        <option value="1">1 Column</option>
+                        <option value="2">2 Columns</option>
+                        <option value="3" selected>3 Columns</option>
+                        <option value="4">4 Columns</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sortOrder">Sort Order:</label>
+                    <select id="sortOrder" name="sortOrder">
+                        <option value="asc">A to Z</option>
+                        <option value="desc">Z to A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="sampleText">Sample Text:</label>
+                    <input type="text" id="sampleText" name="sampleText" value="The quick brown fox jumps over the lazy dog" required>
+                </div>
+                <div class="form-group">
+                    <label for="filterInput">Filter Fonts:</label>
+                    <input type="text" id="filterInput" placeholder="Type to filter fonts by name">
+                </div>
+            </div>
+        </div>
+
+        <div id="downloadAllFonts" style="display: none;">
+            <button class="download-all-btn">Download All Found Fonts (.zip)</button>
+        </div>
+        
+        <div id="loading" class="loading" style="display: none;">
+            <div class="loading-title">Generating previews...</div>
+            <div class="loading-details-container">
+                <div id="loadingDetails"></div>
+            </div>
+            <div class="progress-bar">
+                <div id="progressBar" class="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <div id="message"></div>
+            
+        <div id="totalFonts" style="display: none;">
+            <h2 id="fontCountMessage">No fonts found</h2>
+        </div>
+    </div>
+
+    <div id="results" class="grid grid-3"></div>
+
+    <footer class="footer">GoFindMyFonts</footer>
+    <script>
+        {{js}}
+    </script>
+</body>
+</html>
